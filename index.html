@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="responsive-container"><div id="player"></div></div>
+    
+    <script>
+        const dataTime = [
+            {title: "title 1", time: "1:20"},
+            {title: "title 2", time: "1:90"},
+            {title: "title 3", time: "2:20"},
+        ];
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        var player;
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+            videoId: '_kwWItbDCU8',
+          });
+        }
+
+        // function createListItems(){
+        //     var list = document.getElementById("list");
+        //     for(var i = 0; i < dataTime.length; i++){
+        //         var item = document.createElement("li");
+        //         var link = document.createElement("a");
+        //         item.innerHTML = dataTime[i].time + " - " + dataTime[i].title;
+        //         list.appendChild(item);
+        //     }
+        // }
+
+        function setCurrentTime(slideNum) {
+          var object = [ 0, 133, 193 ];
+          player.seekTo(object[slideNum]);
+        }
+
+        console.log(getSecondsByNumber('1:20'));
+
+        function getSecondsByNumber(time){
+            let timesSplit = time.split(':');
+            let seconds = 0;
+            for(let i = 0; i < timesSplit.length; i++){
+                seconds += parseInt(timesSplit[i]) * Math.pow(60, (timesSplit.length - i - 1));
+            }
+            return seconds;
+        }
+      </script>
+
+
+
+</body>
+</html>
+
+
+
