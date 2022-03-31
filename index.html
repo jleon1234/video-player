@@ -5,16 +5,127 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <title>Document</title>
 </head>
 
 <body>
 
-  <div class="vp__responsive-container">
-    <div id="player"></div>
-    <div id="list-items"></div>
+  <style>
+    .vp__responsive-container {
+      display: flex;
+      background: #F6F6F9;
+      border-radius: 15px;
+      padding: 31px 35px;
+      max-width: 1082px;
+      width: 100%;
+    }
 
+    .vp__responsive-container #player {
+      max-width: 762px;
+      width: 100%;
+      margin-right: 35px;
+    }
+
+    .vp__responsive-container #list-items {
+      max-height: 360px;
+      overflow-y: scroll;
+      padding-right: 10px;
+    }
+
+    .vp__responsive-container #list-items::-webkit-scrollbar {
+      display: none;
+    }
+
+    .vp__listitem-circle {
+      margin-right: 10px;
+    }
+
+    .vp__container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vp__list-items-text {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+      color: #3A3B43;
+      font-family: 'Poppins';
+      margin: 0;
+      padding-bottom: 27px;
+    }
+
+    .vp__listitem {
+      display: flex;
+      align-items: center;
+      padding: 13px 21px;
+      border-radius: 15px;
+      margin-bottom: 14px;
+      border: 0.5px solid #B1B1B1;
+    }
+
+    .vp__listitem .vp__listitem-circle svg path {
+      fill: #6D6666;
+    }
+
+    .vp__listitem a {
+      font-style: none;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #60626D;
+      text-decoration: none;
+    }
+
+    .vp__listitem-active {
+      background-color: #FF3C4D;
+      border: none;
+    }
+
+    .vp__listitem-active a {
+      color: #fff;
+    }
+
+    .vp__listitem-active .vp__listitem-circle svg path {
+      fill: #fff;
+    }
+  </style>
+
+  <div class="vp__container">
+    <div class="vp__responsive-container">
+      <div id="player"></div>
+      <div id="list-items">
+        <p class="vp__list-items-text"> Selecciona la parte de la Business Class a la que quieres adelantar
+        </p>
+        <li class="vp__listitem vp__listitem-active">
+          <div class="vp__listitem-circle">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18 9C18 11.3869 17.0518 13.6761 15.364 15.364C13.6761 17.0518 11.3869 18 9 18C6.61305 18 4.32387 17.0518 2.63604 15.364C0.948212 13.6761 0 11.3869 0 9C0 6.61305 0.948212 4.32387 2.63604 2.63604C4.32387 0.948212 6.61305 0 9 0C11.3869 0 13.6761 0.948212 15.364 2.63604C17.0518 4.32387 18 6.61305 18 9ZM7.63875 5.72962C7.55464 5.66974 7.45567 5.63416 7.35269 5.62678C7.2497 5.61941 7.14667 5.64052 7.05488 5.68781C6.9631 5.73509 6.8861 5.80673 6.83232 5.89487C6.77854 5.98301 6.75006 6.08425 6.75 6.1875V11.8125C6.75006 11.9158 6.77854 12.017 6.83232 12.1051C6.8861 12.1933 6.9631 12.2649 7.05488 12.3122C7.14667 12.3595 7.2497 12.3806 7.35269 12.3732C7.45567 12.3658 7.55464 12.3303 7.63875 12.2704L11.5763 9.45787C11.6492 9.40584 11.7086 9.33714 11.7496 9.2575C11.7906 9.17786 11.812 9.08958 11.812 9C11.812 8.91042 11.7906 8.82214 11.7496 8.7425C11.7086 8.66285 11.6492 8.59416 11.5763 8.54212L7.63875 5.72962Z"
+                fill="#FFF5F5" />
+            </svg>
+          </div>
+          <a href="#!">Módulo 1: 34hd ahdhsjdhsajhdjash dhsjh</a>
+        </li>
+        <li class="vp__listitem">
+          <div class="vp__listitem-circle">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18 9C18 11.3869 17.0518 13.6761 15.364 15.364C13.6761 17.0518 11.3869 18 9 18C6.61305 18 4.32387 17.0518 2.63604 15.364C0.948212 13.6761 0 11.3869 0 9C0 6.61305 0.948212 4.32387 2.63604 2.63604C4.32387 0.948212 6.61305 0 9 0C11.3869 0 13.6761 0.948212 15.364 2.63604C17.0518 4.32387 18 6.61305 18 9ZM7.63875 5.72962C7.55464 5.66974 7.45567 5.63416 7.35269 5.62678C7.2497 5.61941 7.14667 5.64052 7.05488 5.68781C6.9631 5.73509 6.8861 5.80673 6.83232 5.89487C6.77854 5.98301 6.75006 6.08425 6.75 6.1875V11.8125C6.75006 11.9158 6.77854 12.017 6.83232 12.1051C6.8861 12.1933 6.9631 12.2649 7.05488 12.3122C7.14667 12.3595 7.2497 12.3806 7.35269 12.3732C7.45567 12.3658 7.55464 12.3303 7.63875 12.2704L11.5763 9.45787C11.6492 9.40584 11.7086 9.33714 11.7496 9.2575C11.7906 9.17786 11.812 9.08958 11.812 9C11.812 8.91042 11.7906 8.82214 11.7496 8.7425C11.7086 8.66285 11.6492 8.59416 11.5763 8.54212L7.63875 5.72962Z"
+                fill="#FFF5F5" />
+            </svg>
+          </div>
+          <a href="#!">Módulo 1: 34hd ahdhsjdhsajhdjash dhsjh</a>
+        </li>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -35,12 +146,18 @@
     }
 
     createListItems();
-
     function createListItems() {
       var list = document.getElementById("list-items");
       for (var i = 0; i < dataTime.length; i++) {
         var item = document.createElement("li");
         var link = document.createElement("a");
+        link.setAttribute("href", "#");
+        link.setAttribute("data-time", dataTime[i].time);
+        link.addEventListener('click', function (e) {
+          let dateTime = e.target.getAttribute("data-time");
+          console.log(dateTime);
+          setCurrentTime(getSecondsByNumber(dateTime));
+        });
         link.innerHTML = dataTime[i].title;
         item.appendChild(link);
         // item.innerHTML = dataTime[i].time + " - " + dataTime[i].title;
@@ -49,8 +166,8 @@
     }
 
     function setCurrentTime(slideNum) {
-      var object = [0, 133, 193];
-      player.seekTo(object[slideNum]);
+      //   var object = [ 0, 133, 193 ];
+      player.seekTo(slideNum);
     }
 
     console.log(getSecondsByNumber('1:20'));
