@@ -35,6 +35,13 @@
             for(var i = 0; i < dataTime.length; i++){
                 var item = document.createElement("li");
                 var link = document.createElement("a");
+                link.setAttribute("href", "#");
+                link.setAttribute("data-time", dataTime[i].time);
+                link.addEventListener('click', function(e){
+                    let dateTime = e.target.getAttribute("data-time");
+                    console.log(dateTime);
+                    setCurrentTime( getSecondsByNumber(dateTime) );
+                });
                 link.innerHTML = dataTime[i].title;
                 item.appendChild(link);
                 // item.innerHTML = dataTime[i].time + " - " + dataTime[i].title;
@@ -43,8 +50,8 @@
         }
 
         function setCurrentTime(slideNum) {
-          var object = [ 0, 133, 193 ];
-          player.seekTo(object[slideNum]);
+        //   var object = [ 0, 133, 193 ];
+          player.seekTo(slideNum);
         }
 
         console.log(getSecondsByNumber('1:20'));
